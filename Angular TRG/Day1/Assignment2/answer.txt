@@ -1,1 +1,6 @@
-test
+For getting the indexes we have to use extra parameter in the *ngFor i.e let indexOfelement = index;
+
+for eg. I have products = ["iPhone12", "Samsung S22"]
+then the code will look like:
+
+*ngFor = "let prod of products; let indexOfelement = index;"

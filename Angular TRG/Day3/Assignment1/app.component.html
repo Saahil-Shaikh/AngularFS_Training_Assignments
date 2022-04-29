@@ -1,0 +1,56 @@
+<div><button [disabled]="property" title="Show More" value="Show More" (click)="nextItems_click()">Show More</button></div>
+<br>
+
+<div class="row">
+  <div *ngFor="let item of user_list | slice : start : end" style="border: 1px solid; float:left; width: 20%; text-align: center; margin-left: 10px; margin-right: 10px;" class="column">
+      <div  class="card">
+          <div class="container">
+            <p>{{item.username}}</p>
+<p>{{item.location}}</p>
+<p>{{item.password}}</p>
+          </div>
+        </div>
+   </div>
+</div>
+
+<br>
+
+<h2 style="margin-top: 150px; text-align: center;">Employee Details</h2>
+<br>
+<hr>
+<br>
+<div style="float: left; margin-left: 10px; margin-right: 10px; width: 30%;">
+  <h4>Before Piping</h4>
+<table border="1px">
+  <thead>
+    <th>Sr No.</th>
+    <th>Employee Name</th>
+    <th>Grade</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of emp_list">
+      <td>{{item.srno}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.grade}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div style="float: left; margin-left: 10px; margin-right: 10px; width: 50%;">
+  <h4>After Piping</h4>
+<table border="1px">
+  <thead>
+    <th>Sr No.</th>
+    <th>Employee Name</th>
+    <th>Grade</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of emp_list">
+      <td>{{item.srno}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.grade | gradepipe}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

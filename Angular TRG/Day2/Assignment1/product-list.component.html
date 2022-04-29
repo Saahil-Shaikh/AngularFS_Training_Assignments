@@ -1,0 +1,9 @@
+<div style="">
+<p style="text-align: center;"><b>{{type}}</b></p>
+    <div *ngFor="let item of prod_filter" style="border: 1px solid; width: 100%; text-align: center; margin-left: auto; margin-right: auto;">
+              <h4><b>Product Id :{{item.pid}}</b></h4>
+              <p>Product Name : {{item.pname}}</p>
+              <p>Price :{{item.price}}</p>
+              <p>Category: {{item.category}}</p>
+    </div>
+</div>

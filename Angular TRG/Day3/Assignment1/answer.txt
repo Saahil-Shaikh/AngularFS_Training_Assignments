@@ -1,1 +1,7 @@
+We can use number percent pipe in angular with below syntax :
 
+{{number | percent }} 
+
+where:
+number - any number or a number variable
+percent - keyword for using percent pipe

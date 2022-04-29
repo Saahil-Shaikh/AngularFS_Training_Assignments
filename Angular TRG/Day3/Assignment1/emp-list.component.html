@@ -1,0 +1,45 @@
+<style>
+    .input{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+</style>
+
+<div style="margin-top: 400px;">
+<h3>Processing Employee Details Using Ranged Salaries</h3>
+<br>
+<hr>
+<br>
+
+
+    <label class="input" for="from">Enter From Range</label>
+    <input class="input" type="number" [(ngModel)]="from_range" id="from" name="from">
+    <label class="input" for="to">Enter To Range</label>
+    <input class="input" type="number" [(ngModel)]="to_range" id="to" name="to">
+
+    <br>
+    <button class="input" (click)="setValues()"> Display</button>
+</div>
+
+<div style="margin-top:50px">
+
+    <table border="1px">
+        <thead>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Employee Job</th>
+            <th>Employee Salary</th>
+            <th>Employee Dept ID</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of emp_list | rangedpipe: from : to">
+                <td>{{item.eid}}</td>
+                <td>{{item.ename}}</td>
+                <td>{{item.ejob}}</td>
+                <td>{{item.esalary}}</td>
+                <td>{{item.edeptno}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

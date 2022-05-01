@@ -1,0 +1,52 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="row" style="margin-top: 20px;">
+  <div class="col-sm-2">
+    <label for="eid">Enter Employee Number : </label>
+  </div>
+  <div class="col-sm-2">
+    <input type="number" id="eid" name="eid" [(ngModel)]="eid">
+  </div>
+</div>
+<div class="row" style="margin-top: 20px;">
+  <div class="col-sm-2">
+    <label for="ename">Enter Employee Name : </label>
+  </div>
+  <div class="col-sm-2">
+    <input type="text" id="ename" name="ename" [(ngModel)]="ename">
+  </div>
+</div>
+<div class="row" style="margin-top: 20px;">
+  <div class="col-sm-2">
+    <label for="ejob">Enter Employee Job : </label>
+  </div>
+  <div class="col-sm-2">
+    <input type="text" id="ejob" name="ejob" [(ngModel)]="ejob">
+  </div>
+</div>
+<div class="row" style="margin-top: 20px;">
+  <div class="col-sm-2">
+    <label for="esalary">Enter Employee Salary : </label>
+  </div>
+  <div class="col-sm-2">
+    <input type="number" id="esalary" name="esalary" [(ngModel)]="esalary">
+  </div>
+</div>
+
+<div class="row" style="margin-top: 50px;">
+  <div class="col-sm-4">
+    <button (click)="add()">Add Employee</button>
+  </div>
+  <div class="col-sm-4">
+    <button (click)="remove()">Remove Employee (Only Employee ID is Required)</button>
+  </div>
+</div>
+
+

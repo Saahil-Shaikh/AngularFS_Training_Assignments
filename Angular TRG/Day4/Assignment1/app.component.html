@@ -1,0 +1,85 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <div class="row">
+    <div class="col-sm-2 mt-5 ml-5"> 
+      <img src="../assets/list.png" width="100" height="100" (click)="show(1)">
+    </div>
+    <div class="col-sm-2 mt-5 ml-5"> 
+      <img src="../assets/largeimg.png" width="100" height="100" (click)="show(2)">
+    </div>
+    <div class="col-sm-2 mt-5 ml-5"> 
+      <img src="../assets/smallimg.png" width="100" height="100" (click)="show(3)">
+    </div>
+    <div class="col-sm-2 mt-5 ml-5"> 
+      <img src="../assets/table.png" width="100" height="100" (click)="show(4)">
+    </div>
+  </div>
+
+  <section  [ngSwitch]="val">
+    <article *ngSwitchCase=" '1' ">
+      <div class="row">
+        <div class="col-sm-12 mt-5 ml-5">
+          <ul *ngFor="let item of product_list">
+            <li><b>{{item.pname}} | {{item.price}} | {{item.category}}</b></li>
+          </ul>  
+        </div>
+      </div>
+    </article>
+
+    <article *ngSwitchCase=" '2' ">
+      <div class=".container-fluid">
+        <div class="row">
+          <div class="col-sm-3 mt-5 ml-5" style="text-align: center; border: 1px solid black;" *ngFor="let item of product_list">
+            <img src={{item.image}} width="300" height="300">
+            <p><b>{{item.pname}}</b></p>
+            <p><b>{{item.price}}</b></p>
+          </div>
+        </div>
+        </div>
+    </article>
+
+    <article *ngSwitchCase=" '3' ">
+      <div class=".container-fluid">
+        <div class="row">
+          <div class="col-sm-2 mt-5 ml-5" style="text-align: center; border: 1px solid black;" *ngFor="let item of product_list">
+            <img src={{item.image}} width="120" height="100">
+            <p><b>{{item.pname}}</b></p>
+            <p><b>{{item.price}}</b></p>
+            <p><b>{{item.category}}</b></p>
+          </div>
+        </div>
+        </div>
+    </article>
+
+    <article *ngSwitchCase=" '4' ">
+      <div class="row">
+        <div class="col-sm-12 mt-5">
+          <table border="2">
+            <thead>
+              <th>Product Name</th>
+              <th>Product Price</th>
+              <th>Product Category</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of product_list">
+                <td>{{item.pname}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.category}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+
+  </section>

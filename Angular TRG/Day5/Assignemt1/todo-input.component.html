@@ -1,0 +1,28 @@
+<h4 style="text-align: center; margin-top: 20px;">Todo List</h4>
+
+
+<div class="row" *ngFor="let item of todolist; index as i" style="border: 1px solid lightgray; width: 800px; margin: auto; margin-bottom: 1%;">
+    <div class="col-sm-9 mt-2 mb-1" >
+      <label [ngStyle]="{ 'color': (item.isDone == true ? 'Red' : ''), 'text-decoration-line':(item.isDone == true ? 'line-through' : 'none')}">{{item.itemName}}</label>
+    </div>
+    <div class="col-sm-1 mt-2 mb-1" >
+        <input type="checkbox" [(ngModel)]="item.isDone">
+      </div>
+      <div class="col-sm-1 mt-2 mb-1" >
+        <img src="../../assets/update.png" height="30px" width="30px" (click)="updateTodo(i)">
+      </div>
+      <div class="col-sm-1 mt-2 mb-1" >
+        <img src="../../assets/delete.png" height="30px" width="30px" (click)="deleteTodo(i)">
+      </div>
+</div>
+
+<div class="row" style="width: 800px; margin: auto; margin-bottom: 1%;">
+    <div class="col-sm-6 mt-2 mb-1" >
+        <button (click)="deleteDoneTodo()" style="width: 100%; background-color: orangered; color: white;">Delete done Tasks</button>
+      </div>
+
+      <div class="col-sm-6 mt-2 mb-1" >
+        <button (click)="deleteAllTasks()" style="width: 100%; background-color: orangered; color: white;">Delete all Tasks</button>
+      </div>
+
+</div>

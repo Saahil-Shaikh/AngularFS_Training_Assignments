@@ -1,0 +1,6 @@
+1 :
+- To insert images in angular we have to paste our images into assets folder and then we can use the img tag with src attribute pointing to that image location.
+
+2:
+- with *ngFor we can iterate over typescript collections to display it in our template
+- Syntax : *ngFor = " let <var> of <collection_variable_name> "
